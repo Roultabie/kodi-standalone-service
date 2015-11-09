@@ -7,9 +7,8 @@ User = kodi
 Group = kodi
 PAMName=login
 Type = simple
-ExecStart = /usr/bin/kodi --headless tcp
+ExecStart = /usr/bin/kodi --headless --no-test --no-lirc -p
 Restart = on-abort
-StandardInput = tty
 
 [Install]
 WantedBy = multi-user.target
