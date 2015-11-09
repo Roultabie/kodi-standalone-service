@@ -1,15 +1,13 @@
 [Unit]
-Description = Starts instance of Kodi using xinit
-After = systemd-user-sessions.service network.target sound.target mysqld.service
-Conflicts=getty@tty7.service
+Description = Starts instance of Kodi headless version
+After = network.target remote-fs.target nss-lookup.target mysqld.service
 
 [Service]
 User = kodi
 Group = kodi
 PAMName=login
 Type = simple
-TTYPath=/dev/tty7
-ExecStart = /usr/bin/xinit /usr/bin/dbus-launch --exit-with-session /usr/bin/kodi-standalone -- :0 -nolisten tcp vt7
+ExecStart = /usr/bin/kodi --headless tcp
 Restart = on-abort
 StandardInput = tty
 
