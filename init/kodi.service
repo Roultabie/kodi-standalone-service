@@ -7,7 +7,7 @@ User = kodi
 Group = kodi
 PAMName=login
 Type = simple
-ExecStart = /usr/bin/kodi --headless --no-test --no-lirc -p
+ExecStart = /usr/bin/kodi --headless --no-test --no-lirc
 Restart = on-abort
 
 [Install]
